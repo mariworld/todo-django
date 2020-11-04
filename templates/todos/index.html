@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Todos
+        </h1>
+        <h2 class="subtitle">
+          One step at a time
+        </h2>
+      </div>
+    </div>
+  </section>
+  <div class="title">
+    {{ date|date:"D,  Md,  Y" }}    
+  </div>
+  <div class="content ul">
+    {% for todo in todos %}
+    <li>
+    <label class="checkbox">
+        <input type="checkbox" data-todo={{todo.id}}>
+        {{ todo.task }}
+        </input>
+    </label>
+</li>
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endblock %}
